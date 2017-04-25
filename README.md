@@ -159,23 +159,14 @@ public class TestWebInitializer extends AbstractAnnotationConfigDispatcherServle
     	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
         ...
 
-## 其它
-
-TODO
-- 
-
-
 ## 工作原理
 
-日志收集AOP（对于 `spring.trace.SpringTraceAopInterceptor` 适用），以及用于HTTP请求的 `spring.trace.web.TraceLogFilter` 生成跟踪日志
-
-这些日志也是实时输出的，但你需要打印整个日志历史记录，如果确定发生异常，或过慢的逻辑。为了保持一个完整的历史记录在内部 `ThreadLocal` 存储日志信息 보관합니다. 그리고 `ThreadLocal`에 보관된 로그는 적절히 시점에 제거 됩니다.
+使用 `ThreadLocal` 存储日志信息
 
 
-## 참고한 기능
+## 其它
 
-스프링 프레임워크의 `org.springframework.aop.interceptor.CustomizableTraceInterceptor`에서 많은 영감을 받았습니다.
-이 클래스를 확장하면서 스프링 Trace 프로젝트가 시작되었습니다.  
+从 `org.springframework.aop.interceptor.CustomizableTraceInterceptor` 获取了很多的灵感来源 
 
 ## TODO
 
