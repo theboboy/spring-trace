@@ -141,24 +141,24 @@ public class TestWebInitializer extends AbstractAnnotationConfigDispatcherServle
 
 **应用程序异常日志**
 
-    06-09 23:28:28 [http-nio-8080-exec-9] E APP_ERROR - TRACE LOG
-    [REQ] host=0:0:0:0:0:0:0:1, method=GET, url=http://localhost:8080/exception, body=null
-    |-->[Controller] HelloController.exception()
-    |   |-->[Service] HelloService.helloException()
-    |   |<X-[Service] HelloService.helloException() Exception! java.lang.Exception: exception 1ms.
-    |<X-[Controller] HelloController.exception() Exception! java.lang.Exception: exception 1ms.
-    [RES] host=0:0:0:0:0:0:0:1, method=GET, url=http://localhost:8080/exception, status=200, time=6ms, ex=org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.Exception: exception
-    [EXCEPTION] Request processing failed; nested exception is java.lang.Exception: exception; trace=org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.Exception: exception
-    	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:973)
-    	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
-    	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
-    	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:837)
-    	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
-    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
-    	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
-    	at spring.trace.web.TraceLogFilter.doFilterInternal(TraceLogFilter.java:74)
-    	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-    	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+    06-09 23:28:28 [http-nio-8080-exec-9] E APP_ERROR  -  TRACE LOG
+    [REQ] host = 0：0：0：0：0：0：0：1，method = GET，url = http：// localhost：8080 / exception，body = null
+    |  - > [Controller] HelloController.exception（）
+    | |  - > [服务] HelloService.helloException（）
+    | | <X- [服务] HelloService.helloException（）异常！java.lang.Exception：消息 1ms。
+    | <X [Controller] HelloController.exception（）异常！java.lang.Exception：消息 1ms。
+    [RES] host = 0：0：0：0：0：0：0：1，方法= GET，url = http：// localhost：8080 / exception，status = 200，time = 6ms，ex = org.springframework .web.util.NestedServletException：请求处理失败; 嵌套异常是java.lang.Exception：消息
+    [EXCEPTION]请求处理失败; 嵌套异常是java.lang.Exception：강제예외; trace = org.springframework.web.util.NestedServletException：请求处理失败; 嵌套异常是java.lang.Exception：消息
+    	在org.springframework.web.servlet.FrameworkServlet.processRequest（FrameworkServlet.java:973）
+    	在org.springframework.web.servlet.FrameworkServlet.doGet（FrameworkServlet.java:852）
+    	在javax.servlet.http.HttpServlet.service（HttpServlet.java:621）
+    	在org.springframework.web.servlet.FrameworkServlet.service（FrameworkServlet.java:837）
+    	在javax.servlet.http.HttpServlet.service（HttpServlet.java:728）
+    	在org.apache.catalina.core.ApplicationFilterChain.internalDoFilter（ApplicationFilterChain.java:305）
+    	在org.apache.catalina.core.ApplicationFilterChain.doFilter（ApplicationFilterChain.java:210）
+    	在spring.trace.web.TraceLogFilter.doFilterInternal（TraceLogFilter.java:74）
+    	在org.springframework.web.filter.OncePerRequestFilter.doFilter（OncePerRequestFilter.java:107）
+    	在org.apache.catalina.core.ApplicationFilterChain.internalDoFilter（ApplicationFilterChain.java:243）
         ...
 
 ## 工作原理
