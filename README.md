@@ -31,12 +31,12 @@
 **日志功能**
 
 - 可以查看方法调用耗费的时间
-    - ex) `hello.finds() took 2ms. [size=2]`
+    - 例) `hello.finds() took 2ms. [size=2]`
 
 - 可以跟踪方法调用的参数和返回值
-    - 返回值是 `null` 输出 `null` ex) `[null]`
-    - 返回值是一个对象 输出该对象类型 ex) `[<Member>]`
-    - 返回值是一个集合 输出它的长度 ex) `[size=10]`
+    - 返回值是 `null` 输出 `null` 例) `[null]`
+    - 返回值是一个对象 输出该对象类型 例) `[<Member>]`
+    - 返回值是一个集合 输出它的长度 例) `[size=10]`
          
 - HTTP请求
     - 可以跟踪各种HTTP请求信息 特别是可以输出HTTP的body信息
