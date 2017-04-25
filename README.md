@@ -89,19 +89,21 @@ public class TestWebInitializer extends AbstractAnnotationConfigDispatcherServle
         <appender-ref ref="STDOUT" />
     </root>
 
-    <!-- 실시간 TRACE -->
+    <!-- 实时日志 -->
     <logger name="TRACE" level="trace" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
-    <!-- 애플리케이션 예외 -->
-    <logger name="APP_ERROR" level="info" additivity="false">
-        <appender-ref ref="STDOUT" />
-    </logger>
-    <!-- 느린 로직 -->
+
+    <!-- 慢逻辑日志 -->
     <logger name="SLOW_LOGIC" level="info" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
-    
+
+    <!-- 应用程序异常日志 -->
+    <logger name="APP_ERROR" level="info" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
 </configuration>
 ```
 
@@ -143,10 +145,10 @@ public class TestWebInitializer extends AbstractAnnotationConfigDispatcherServle
     [REQ] host=0:0:0:0:0:0:0:1, method=GET, url=http://localhost:8080/exception, body=null
     |-->[Controller] HelloController.exception()
     |   |-->[Service] HelloService.helloException()
-    |   |<X-[Service] HelloService.helloException() Exception! java.lang.Exception: 강제 예외 1ms.
-    |<X-[Controller] HelloController.exception() Exception! java.lang.Exception: 강제 예외 1ms.
-    [RES] host=0:0:0:0:0:0:0:1, method=GET, url=http://localhost:8080/exception, status=200, time=6ms, ex=org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.Exception: 강제 예외
-    [EXCEPTION] Request processing failed; nested exception is java.lang.Exception: 강제 예외; trace=org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.Exception: 강제 예외
+    |   |<X-[Service] HelloService.helloException() Exception! java.lang.Exception: exception 1ms.
+    |<X-[Controller] HelloController.exception() Exception! java.lang.Exception: exception 1ms.
+    [RES] host=0:0:0:0:0:0:0:1, method=GET, url=http://localhost:8080/exception, status=200, time=6ms, ex=org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.Exception: exception
+    [EXCEPTION] Request processing failed; nested exception is java.lang.Exception: exception; trace=org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.Exception: exception
     	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:973)
     	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:852)
     	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
