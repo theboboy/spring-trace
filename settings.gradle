@@ -1,5 +1,0 @@
-rootProject.name = 'spring-trace'
-
-include "spring-trace-core"
-include "spring-trace-web"
-include "sample-web"
