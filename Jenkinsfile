@@ -11,9 +11,14 @@ pipeline {
         sh 'git pull'
       }
     }
-    stage('build') {
+    stage('clean project') {
       steps {
-        sh 'mvn clean compile'
+        echo 'mvn clean compile'
+      }
+    }
+    stage('build project') {
+      steps {
+        echo 'mvn clean install -DskipTests'
       }
     }
   }
