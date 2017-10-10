@@ -8,6 +8,7 @@ pipeline {
     }
     stage('pull latest code') {
       steps {
+        sh 'git checkout origin/master'
         sh 'git pull'
       }
     }
